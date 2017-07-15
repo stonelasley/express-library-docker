@@ -1,0 +1,28 @@
+{
+  "name": "express-locallibrary-tutorial",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "devdebug": "SET DEBUG=express-locallibrary-tutorial:* & npm run devstart",
+    "start": "nodemon ./bin/www",
+    "postinstall": "npm run docker:build",
+    "docker:build": "docker build -t node-test:0.1 .",
+    "docker:up": "docker-compose up",
+    "db:seed": "node populatedb mongodb://localhost:27017"
+  },
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.3",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
